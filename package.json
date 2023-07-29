@@ -6,19 +6,15 @@
     "type": "git",
     "url": "https://github.com/jamesonknutson/eslint-config.git"
   },
-  "main": "index.js",
+  "main": ".eslintrc.json",
+  "files": [
+    ".eslintrc.json"
+  ],
   "type": "commonjs",
   "keywords": [
     "eslint",
     "eslintconfig"
   ],
   "author": "jamesonknutson",
-  "license": "ISC",
-  "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.2.0",
-    "@typescript-eslint/parser": "^6.2.0",
-    "eslint": "^8.46.0",
-    "prettier": "^2.8.8",
-    "prettier-eslint": "^15.0.1"
-  }
+  "license": "ISC"
 }
