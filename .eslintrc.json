@@ -1,14 +1,59 @@
 {
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:unicorn/recommended",
+    "plugin:jsonc/base"
+  ],
+  "overrides": [
+    {
+      "extends": [
+        "plugin:@html-eslint/recommended"
+      ],
+      "files": [
+        "*/**.{htm,html}"
+      ],
+      "parser": "@html-eslint/parser"
+    },
+    {
+      "extends": [
+        "plugin:jsonc/recommended-with-json"
+      ],
+      "files": [
+        "**/*.json"
+      ],
+      "parser": "jsonc-eslint-parser"
+    },
+    {
+      "extends": [
+        "plugin:jsonc/recommended-with-jsonc"
+      ],
+      "files": [
+        "**/*.jsonc"
+      ],
+      "parser": "jsonc-eslint-parser"
+    },
+    {
+      "extends": [
+        "plugin:jsonc/recommended-with-json5"
+      ],
+      "files": [
+        "**/*.json5"
+      ],
+      "parser": "jsonc-eslint-parser"
+    }
   ],
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "unicorn",
+    "@html-eslint"
   ],
+  "root": true,
   "rules": {
-    "no-unused-vars": "off",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-empty-function": "warn",
@@ -21,6 +66,7 @@
       1,
       "always"
     ],
+    "no-unused-vars": "off",
     "object-curly-spacing": [
       1,
       "always"
@@ -38,6 +84,13 @@
     "semi": [
       "warn",
       "never"
-    ]
+    ],
+    "unicorn/filename-case": "off",
+    "unicorn/no-array-reduce": "off",
+    "unicorn/no-empty-file": "off",
+    "unicorn/no-null": "off",
+    "unicorn/prefer-module": "error",
+    "unicorn/prefer-node-protocol": "error",
+    "unicorn/prevent-abbreviations": "off"
   }
 }
