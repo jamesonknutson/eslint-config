@@ -54,6 +54,7 @@
   ],
   "root": true,
   "rules": {
+    "unicorn/no-array-method-this-argument": "off",
     "unicorn/no-nested-ternary": "off",
     "jsonc/no-comments": "off",
     "@html-eslint/indent": "off",
@@ -87,6 +88,31 @@
     "semi": [
       "warn",
       "never"
+    ],
+    "lines-between-class-members": [
+      "error",
+      {
+        "enforce": [
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "method"
+          },
+          {
+            "blankLine": "always",
+            "prev": "method",
+            "next": "*"
+          },
+          {
+            "blankLine": "always",
+            "prev": "field",
+            "next": "field"
+          }
+        ]
+      },
+      {
+        "exceptAfterSingleLine": true
+      }
     ],
     "unicorn/filename-case": "off",
     "unicorn/no-array-reduce": "off",
