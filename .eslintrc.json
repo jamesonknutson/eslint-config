@@ -1,47 +1,11 @@
 {
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:unicorn/recommended",
-    "plugin:jsonc/base"
-  ],
-  "overrides": [
-    {
-      "extends": [
-        "plugin:@html-eslint/recommended"
-      ],
-      "files": [
-        "*/**.{htm,html}"
-      ],
-      "parser": "@html-eslint/parser"
-    },
-    {
-      "extends": [
-        "plugin:jsonc/recommended-with-json"
-      ],
-      "files": [
-        "**/*.json"
-      ],
-      "parser": "jsonc-eslint-parser"
-    },
-    {
-      "extends": [
-        "plugin:jsonc/recommended-with-jsonc"
-      ],
-      "files": [
-        "**/*.jsonc"
-      ],
-      "parser": "jsonc-eslint-parser"
-    },
-    {
-      "extends": [
-        "plugin:jsonc/recommended-with-json5"
-      ],
-      "files": [
-        "**/*.json5"
-      ],
-      "parser": "jsonc-eslint-parser"
-    }
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/strict-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
+    "plugin:@getify/proper-ternary/getify-says"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -49,15 +13,12 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "unicorn",
-    "@html-eslint"
+    "unicorn"
   ],
   "root": true,
   "rules": {
     "unicorn/no-array-method-this-argument": "off",
     "unicorn/no-nested-ternary": "off",
-    "jsonc/no-comments": "off",
-    "@html-eslint/indent": "off",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-empty-function": "warn",
