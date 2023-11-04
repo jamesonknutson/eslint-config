@@ -1,4 +1,7 @@
 {
+  "env": {
+    "es2020": true
+  },
   "extends": [
     "eslint:recommended",
     "plugin:unicorn/recommended",
@@ -6,34 +9,82 @@
     "plugin:@typescript-eslint/strict-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked"
   ],
+  "ignorePatterns": [
+    "**/node_modules",
+    "**/node_modules/*",
+    "**/node_modules/**",
+    "**/node_modules/**/*",
+    "**/out",
+    "**/out/*",
+    "**/out/**",
+    "**/out/**/*",
+    "**/dist",
+    "**/dist/*",
+    "**/dist/**",
+    "**/dist/**/*",
+    ".eslintrc.json",
+    ".prettierrc.json"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "unicorn"
-  ],
   "root": true,
   "rules": {
-    "unicorn/no-array-method-this-argument": "off",
-    "unicorn/no-nested-ternary": "off",
+    "@typescript-eslint/array-type": "off",
     "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "array-bracket-spacing": [
       1,
       "always"
     ],
+    "lines-between-class-members": [
+      "error",
+      {
+        "enforce": [
+          {
+            "blankLine": "always",
+            "next": "method",
+            "prev": "*"
+          },
+          {
+            "blankLine": "always",
+            "next": "*",
+            "prev": "method"
+          },
+          {
+            "blankLine": "never",
+            "next": "*",
+            "prev": "field"
+          }
+        ]
+      }
+    ],
     "no-unused-vars": "off",
     "object-curly-spacing": [
       1,
       "always"
+    ],
+    "one-var": [
+      "error",
+      "never"
     ],
     "prefer-const": [
       "off"
@@ -45,41 +96,72 @@
         "allowTemplateLiterals": true
       }
     ],
+    "require-await": [
+      "error"
+    ],
     "semi": [
       "warn",
       "never"
     ],
-    "lines-between-class-members": [
-      "error",
-      {
-        "enforce": [
-          {
-            "blankLine": "always",
-            "prev": "*",
-            "next": "method"
-          },
-          {
-            "blankLine": "always",
-            "prev": "method",
-            "next": "*"
-          },
-          {
-            "blankLine": "always",
-            "prev": "field",
-            "next": "field"
-          }
-        ]
-      },
-      {
-        "exceptAfterSingleLine": true
-      }
-    ],
     "unicorn/filename-case": "off",
+    "unicorn/no-array-method-this-argument": "off",
     "unicorn/no-array-reduce": "off",
     "unicorn/no-empty-file": "off",
+    "unicorn/no-nested-ternary": "off",
     "unicorn/no-null": "off",
     "unicorn/prefer-module": "error",
     "unicorn/prefer-node-protocol": "error",
     "unicorn/prevent-abbreviations": "off"
+  },
+  "settings": {
+    "componentWrapperFunctions": [
+      "observer",
+      {
+        "property": "styled"
+      },
+      {
+        "object": "Mobx",
+        "property": "observer"
+      },
+      {
+        "object": "<pragma>",
+        "property": "observer"
+      }
+    ],
+    "formComponents": [
+      "CustomForm",
+      {
+        "formAttribute": "endpoint",
+        "name": "Form"
+      }
+    ],
+    "linkComponents": [
+      "Hyperlink",
+      {
+        "linkAttribute": "to",
+        "name": "Link"
+      }
+    ],
+    "propWrapperFunctions": [
+      "forbidExtraProps",
+      {
+        "object": "Object",
+        "property": "freeze"
+      },
+      {
+        "property": "myFavoriteWrapper"
+      },
+      {
+        "exact": true,
+        "property": "forbidExtraProps"
+      }
+    ],
+    "react": {
+      "createClass": "createReactClass",
+      "flowVersion": "0.53",
+      "fragment": "Fragment",
+      "pragma": "React",
+      "version": "detect"
+    }
   }
 }
