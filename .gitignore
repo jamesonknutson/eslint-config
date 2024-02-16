@@ -1,9 +1,1 @@
-*
-*/*
-
-!index.js
-!package.json
-!package-lock.json
-!.vscode
-!.gitignore
-!.eslintrc.json
+node_modules
