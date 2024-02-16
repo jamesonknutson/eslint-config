@@ -18,6 +18,8 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   rules: {
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/array-type': 'off',
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',
