@@ -1,6 +1,6 @@
 /* eslint-env node */
 module.exports = {
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'unicorn'],
   extends: [
     'eslint:recommended',
     'plugin:unicorn/recommended',
@@ -14,10 +14,11 @@ module.exports = {
     'out',
     'dist',
     '.eslintrc.json',
-    '.prettierrc.json'
+    '.prettierrc.json',
   ],
   parser: '@typescript-eslint/parser',
   rules: {
+    '@typescript-eslint/no-unsafe-return': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/array-type': 'off',
