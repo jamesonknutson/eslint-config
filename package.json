@@ -4,7 +4,7 @@
   "description": "My ESLint Configuration",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jamesonknutson/eslint-config.git"
+    "url": "git+https://github.com/jamesonknutson/eslint-config.git"
   },
   "main": ".eslintrc.cjs",
   "files": [

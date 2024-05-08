@@ -18,6 +18,7 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   rules: {
+    'unicorn/empty-brace-spaces': 'off',
     '@typescript-eslint/prefer-for-of': 'off',
     'no-empty': 'off',
     '@typescript-eslint/no-unsafe-return': 'off',
