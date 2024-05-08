@@ -18,6 +18,8 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   rules: {
+    '@typescript-eslint/prefer-for-of': 'off',
+    'no-empty': 'off',
     '@typescript-eslint/no-unsafe-return': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
