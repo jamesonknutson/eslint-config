@@ -67,9 +67,8 @@ module.exports = {
         allowTemplateLiterals: true
       }
     ],
-    'require-await': [
-      'error'
-    ],
+    'require-await': 'off',
+    '@typescript-eslint/require-await': 'off',
     semi: [
       'warn',
       'never'
